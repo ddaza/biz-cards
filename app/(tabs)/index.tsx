@@ -18,16 +18,14 @@ const reactLogo = Asset.fromModule(
 ).uri;
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView>
-      {/* headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-    headerImage={
-      <Image source={{ uri: reactLogo }} style={styles.reactLogo} />
-    }
-    >*/}
-      <StyledView />
-    </ParallaxScrollView>
-  );
+  //   <ParallaxScrollView>
+  //   headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
+  // headerImage={
+  //   <Image source={{ uri: reactLogo }} style={styles.reactLogo} />
+  // }
+  // >
+  return <StyledView />;
+  // </ParallaxScrollView>
 }
 
 const styles = StyleSheet.create({

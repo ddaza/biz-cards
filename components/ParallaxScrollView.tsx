@@ -14,8 +14,8 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 const HEADER_HEIGHT = 250;
 
 type Props = PropsWithChildren<{
-  headerImage: ReactElement;
-  headerBackgroundColor: { dark: string; light: string };
+  headerImage?: ReactElement;
+  headerBackgroundColor?: { dark: string; light: string };
 }>;
 
 export default function ParallaxScrollView({
@@ -59,11 +59,13 @@ export default function ParallaxScrollView({
         <Animated.View
           style={[
             styles.header,
-            { backgroundColor: headerBackgroundColor[colorScheme] },
+            ...(headerBackgroundColor
+              ? [{ backgroundColor: headerBackgroundColor[colorScheme] }]
+              : []),
             headerAnimatedStyle,
           ]}
         >
-          {headerImage}
+          {headerImage ?? null}
         </Animated.View>
         <ThemedView style={styles.content}>{children}</ThemedView>
       </Animated.ScrollView>
