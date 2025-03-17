@@ -17,7 +17,7 @@ import { useColorScheme } from "@/hooks/useColorScheme.web";
 
 type ThemeContextType = Maybe<{
   colors: ThemeType;
-  theme: ColorSchemeName;
+  themeName: ColorSchemeName;
   toggleTheme: () => void;
 }>;
 
@@ -26,7 +26,7 @@ const ThemeContext = createContext<ThemeContextType>(undefined);
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const colorScheme = useColorScheme() ?? THEME_LIGHT;
 
-  const [theme, setTheme] = useState(THEME_LIGHT);
+  const [themeName, setTheme] = useState(THEME_LIGHT);
   // const [colors, setColors] = useState(DefaultTheme);
 
   const colors = useMemo(() => {
@@ -47,7 +47,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, colors, toggleTheme }}>
+    <ThemeContext.Provider value={{ themeName, colors, toggleTheme }}>
       <ReactThemeProvider value={colors}>{children}</ReactThemeProvider>
     </ThemeContext.Provider>
   );
