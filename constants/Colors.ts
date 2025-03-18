@@ -3,8 +3,13 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
+import {
+  DarkTheme,
+  DefaultTheme,
+  Theme as ThemeType,
+} from "@react-navigation/native";
 import type { ColorSchemeName } from "react-native";
-import type { ValueOf } from "type-fest";
+// import type { ValueOf } from "type-fest";
 export type { ColorSchemeName };
 
 const tintColorLight = "#0a7ea4";
@@ -29,12 +34,17 @@ export const Colors = {
   },
 };
 
-export type ThemeType = Record<string, ValueOf<typeof Colors>>;
+export const DefaultThemes: Record<string, ThemeType> = {
+  light: DefaultTheme,
+  dark: DarkTheme,
+};
+
+// export type ThemeType = Record<string, ValueOf<typeof Colors>>;
 
 export const THEME_LIGHT: ColorSchemeName = "light";
 export const THEME_DARK: ColorSchemeName = "dark";
 
-export const Theme: ThemeType = {
-  light: Colors.light,
-  dark: Colors.dark,
-};
+// export const Theme: ThemeType = {
+//   light: Colors.light,
+//   dark: Colors.dark,
+// };
