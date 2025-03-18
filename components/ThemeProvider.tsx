@@ -13,7 +13,7 @@ import {
 } from "@react-navigation/native";
 
 import { THEME_DARK, THEME_LIGHT, ColorSchemeName } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme.web";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 type ThemeContextType = Maybe<{
   colors: ThemeType;
