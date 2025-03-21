@@ -9,8 +9,8 @@ import {
   Theme as ThemeType,
 } from "@react-navigation/native";
 import type { ColorSchemeName } from "react-native";
-// import type { ValueOf } from "type-fest";
-export type { ColorSchemeName };
+
+export type ColorNameType = NonNullable<ColorSchemeName>;
 
 const tintColorLight = "#0a7ea4";
 const tintColorDark = "#fff";
@@ -41,8 +41,8 @@ export const DefaultThemes: Record<string, ThemeType> = {
 
 // export type ThemeType = Record<string, ValueOf<typeof Colors>>;
 
-export const THEME_LIGHT: ColorSchemeName = "light";
-export const THEME_DARK: ColorSchemeName = "dark";
+export const THEME_LIGHT: ColorNameType = "light";
+export const THEME_DARK: ColorNameType = "dark";
 
 // export const Theme: ThemeType = {
 //   light: Colors.light,
