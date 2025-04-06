@@ -12,8 +12,14 @@ import type { ColorSchemeName } from "react-native";
 
 export type ColorNameType = NonNullable<ColorSchemeName>;
 
+
 const tintColorLight = "#0a7ea4";
 const tintColorDark = "#fff";
+
+/**
+ * Learn more about light and dark modes:
+ * https://docs.expo.dev/guides/color-schemes/
+ */
 
 export const Colors = {
   light: {
@@ -39,12 +45,5 @@ export const DefaultThemes: Record<string, ThemeType> = {
   dark: DarkTheme,
 };
 
-// export type ThemeType = Record<string, ValueOf<typeof Colors>>;
-
 export const THEME_LIGHT: ColorNameType = "light";
 export const THEME_DARK: ColorNameType = "dark";
-
-// export const Theme: ThemeType = {
-//   light: Colors.light,
-//   dark: Colors.dark,
-// };
