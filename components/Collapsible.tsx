@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { IconSymbol } from "@/components/ui/IconSymbol";
-import { Colors } from "@/constants/Colors";
+import { ColorsByProp } from "@/constants/Colors";
 import { useThemeProvider } from "./ThemeProvider";
 
 export function Collapsible({
@@ -26,7 +26,9 @@ export function Collapsible({
           size={18}
           weight="medium"
           color={
-            theme?.themeName === "light" ? Colors.light.icon : Colors.dark.icon
+            theme?.themeName === "light"
+              ? ColorsByProp.light.icon
+              : ColorsByProp.dark.icon
           }
           style={{ transform: [{ rotate: isOpen ? "90deg" : "0deg" }] }}
         />

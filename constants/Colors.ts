@@ -12,30 +12,38 @@ import type { ColorSchemeName } from "react-native";
 
 export type ColorNameType = NonNullable<ColorSchemeName>;
 
-const tintColorLight = "#0a7ea4";
-const tintColorDark = "#fff";
+export const Colors = {
+  Night: "#0C1214",
+  DarkPurple: "#332b3d",
+  ChineseViolet: "#68597b",
+  Wisteria: "#bda0e2",
+  Magnolia: "#f3edfb",
+  WhiteSmoke: "#f5f5f5",
+  Bone: "#d4d4c2",
+  White: "#fcfcfc",
+};
 
 /**
  * Learn more about light and dark modes:
  * https://docs.expo.dev/guides/color-schemes/
  */
 
-export const Colors = {
+export const ColorsByProp = {
   light: {
-    text: "#11181C",
-    background: "#fff",
-    tint: tintColorLight,
-    icon: "#687076",
-    tabIconDefault: "#687076",
-    tabIconSelected: tintColorLight,
+    text: Colors.Night,
+    background: Colors.Bone,
+    tint: Colors.Magnolia,
+    icon: Colors.Wisteria,
+    tabIconDefault: Colors.ChineseViolet,
+    tabIconSelected: Colors.Magnolia,
   },
   dark: {
-    text: "#ECEDEE",
-    background: "#151718",
-    tint: tintColorDark,
-    icon: "#9BA1A6",
-    tabIconDefault: "#9BA1A6",
-    tabIconSelected: tintColorDark,
+    text: Colors.White,
+    background: Colors.Night,
+    tint: Colors.Magnolia,
+    icon: Colors.Wisteria,
+    tabIconDefault: Colors.Wisteria,
+    tabIconSelected: Colors.White,
   },
 };
 

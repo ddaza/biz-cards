@@ -20,9 +20,10 @@
 pre-commit:
   parallel: true
   jobs:
-    - run: yarn lint {staged_files}
-      glob: "*.{js,ts,jsx,tsx}"
+    - run: yarn lint
+      # glob: "*.{js,ts,jsx,tsx}"
     - run: yarn format {staged_files}
+      glob: "*.{js,jsx,ts,tsx,json,md,mdx,yml,yaml}"
 
   #     - name: rubocop
 #       glob: "*.rb"
