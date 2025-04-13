@@ -3,17 +3,17 @@ Can you give me a minimal example of a paralax scroll component in react native?
 Here's a minimal example of a parallax scroll effect in React Native using the `Animated` API:
 
 ```jsx
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   View,
   Animated,
   Dimensions,
   ImageBackground,
-} from 'react-native';
+} from "react-native";
 
 const HEADER_HEIGHT = 200; // Height of the parallax header
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const ParallaxScroll = () => {
   const scrollY = new Animated.Value(0);
@@ -21,13 +21,13 @@ const ParallaxScroll = () => {
   const headerTranslateY = scrollY.interpolate({
     inputRange: [0, HEADER_HEIGHT],
     outputRange: [0, -HEADER_HEIGHT],
-    extrapolate: 'clamp',
+    extrapolate: "clamp",
   });
 
   const imageTranslateY = scrollY.interpolate({
     inputRange: [0, HEADER_HEIGHT],
     outputRange: [0, HEADER_HEIGHT * 0.75],
-    extrapolate: 'clamp',
+    extrapolate: "clamp",
   });
 
   return (
@@ -39,7 +39,7 @@ const ParallaxScroll = () => {
         ]}
       >
         <Animated.Image
-          source={{ uri: 'https://picsum.photos/800/600' }}
+          source={{ uri: "https://picsum.photos/800/600" }}
           style={[
             styles.headerImage,
             { transform: [{ translateY: imageTranslateY }] },
@@ -50,7 +50,7 @@ const ParallaxScroll = () => {
       <Animated.ScrollView
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-          { useNativeDriver: true }
+          { useNativeDriver: true },
         )}
         scrollEventThrottle={16}
       >
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   headerImage: {
     width: width,
     height: HEADER_HEIGHT,
-    resizeMode: 'cover',
+    resizeMode: "cover",
   },
   scrollContent: {
     paddingTop: HEADER_HEIGHT,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   placeholder: {
     height: 200,
     margin: 10,
-    backgroundColor: '#eee',
+    backgroundColor: "#eee",
     borderRadius: 10,
   },
 });
@@ -116,7 +116,7 @@ Key points about this implementation:
 To use this component, simply import and render it in your app:
 
 ```jsx
-import ParallaxScroll from './ParallaxScroll';
+import ParallaxScroll from "./ParallaxScroll";
 
 // In your app
 const App = () => {
@@ -125,6 +125,7 @@ const App = () => {
 ```
 
 You can customize this further by:
+
 - Changing the `HEADER_HEIGHT`
 - Modifying the interpolation values
 - Adding more animated elements

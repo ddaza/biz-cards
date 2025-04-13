@@ -12,7 +12,6 @@ import type { ColorSchemeName } from "react-native";
 
 export type ColorNameType = NonNullable<ColorSchemeName>;
 
-
 const tintColorLight = "#0a7ea4";
 const tintColorDark = "#fff";
 
