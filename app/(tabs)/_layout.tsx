@@ -5,7 +5,7 @@ import { Platform } from "react-native";
 import { HapticTab } from "@/components/HapticTab";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
-import { Colors } from "@/constants/Colors";
+import { ColorsByProp } from "@/constants/Colors";
 import { useThemeProvider } from "@/components/ThemeProvider";
 
 export default function TabLayout() {
@@ -14,7 +14,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[theme?.themeName ?? "light"].tint,
+        tabBarActiveTintColor: ColorsByProp[theme?.themeName ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,

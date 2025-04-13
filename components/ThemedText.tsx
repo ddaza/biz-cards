@@ -1,7 +1,7 @@
 import { Text, type TextProps, StyleSheet } from "react-native";
 
 import { useMemo } from "react";
-import { Colors } from "@/constants/Colors";
+import { ColorsByProp } from "@/constants/Colors";
 import { useThemeProvider } from "./ThemeProvider";
 
 export type ThemedTextProps = TextProps & {
@@ -18,7 +18,7 @@ export function ThemedText({
   ...rest
 }: ThemedTextProps) {
   const { themeName } = useThemeProvider();
-  const textColor = useMemo(() => Colors?.[themeName]?.text, [themeName]);
+  const textColor = useMemo(() => ColorsByProp?.[themeName]?.text, [themeName]);
 
   return (
     <Text
