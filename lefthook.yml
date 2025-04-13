@@ -23,8 +23,8 @@ pre-commit:
     - run: yarn lint {staged_files}
       glob: "*.{js,ts,jsx,tsx}"
     - run: yarn format {staged_files}
-#
-#     - name: rubocop
+
+  #     - name: rubocop
 #       glob: "*.rb"
 #       exclude:
 #         - config/application.rb
